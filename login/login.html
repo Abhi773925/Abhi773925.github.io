@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h1>Continue with your credentials</h1>
+        <form action="post">
+         
+        <label for="email">Enter email:</label>
+        <input type="text" placeholder="Email" id="email">
+        <br>
+         <label for="password">Enter password:</label>
+        <input type="password" placeholder="password" id="password">
+        <br>
+        <button type="submit" style=" text-align: center; display:flex; ">Login to Account</button>
+
+    </form>
+
+    <script>
+        let email = document.getElementById("email");
+        let password = document.getElementById("password");
+
+        document.querySelector("form").addEventListener("submit", function(e) {
+            e.preventDefault();
+
+            let a = localStorage.getItem("email");
+            let b = localStorage.getItem("password");
+
+            if (a === email.value && b === password.value) {
+                alert('welcome to the home page');
+            } else {
+                alert('invalid credentials');
+            }
+        });
+    </script>
+    </div>
+</body>
+</html>
